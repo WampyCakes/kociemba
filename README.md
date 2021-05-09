@@ -1,8 +1,8 @@
 # kociemba
-A slightly modified adaptation of [Herbert Kociemba's Two Phase Rubik's Cube Solving Algorithm](https://github.com/hkociemba/RubiksCube-TwophaseSolver) for use with [manim-rubikscube](https://github.com/WampyCakes/manim-rubikscube)
+A slightly modified adaptation of [Herbert Kociemba's Two Phase Rubik's Cube Solving Algorithm](https://github.com/hkociemba/RubiksCube-TwophaseSolver) for use with [manim-rubikscube](https://github.com/WampyCakes/manim-rubikscube).
 
 # License
-This is licensed under the GPLv3.0 license ([see LICENSE file](https://github.com/WampyCakes/kociemba/blob/main/LICENSE) ) in cooperation with Kociemba's algorithm license.
+This is licensed under the GPLv3.0 license ([see LICENSE file](https://github.com/WampyCakes/kociemba/blob/main/LICENSE)) in cooperation with Kociemba's algorithm license.
 
 As per the license, changes made to Kociemba's source are:
 
