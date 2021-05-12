@@ -61,7 +61,7 @@ def create_phase1_prun_table():
         print("creating " + fname + " table...")
         print('This may take half an hour or even longer, depending on the hardware.')
 
-        flipslice_twist_depth3 = np.array([0xffffffff] * (total // 16 + 1), dtype=uint)#ar.array('L', [0xffffffff] * (total // 16 + 1))
+        flipslice_twist_depth3 = np.full((total // 16 + 1), 0xffffffff, dtype=uint)#ar.array('L', [0xffffffff] * (total // 16 + 1))
         # #################### create table with the symmetries of the flipslice classes ###############################
         cc = cb.CubieCube()
         fs_sym = ar.array('H', [0] * defs.N_FLIPSLICE_CLASS)
