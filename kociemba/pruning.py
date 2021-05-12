@@ -26,7 +26,7 @@ def get_flipslice_twist_depth3(ix):
     """get_fst_depth3(ix) is *exactly* the number of moves % 3 to solve phase 1 of a cube with index ix"""
     y = flipslice_twist_depth3[ix // 16]
     y >>= np.uint((ix % 16) * 2)
-    return y & 3
+    return y & np.uint(3)
 
 
 def get_corners_ud_edges_depth3(ix):
