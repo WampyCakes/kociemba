@@ -25,7 +25,7 @@ relative_path = path.join(path.dirname(__file__), "tables/")
 def get_flipslice_twist_depth3(ix):
     """get_fst_depth3(ix) is *exactly* the number of moves % 3 to solve phase 1 of a cube with index ix"""
     y = flipslice_twist_depth3[ix // 16]
-    y >>= (ix % 16) * 2
+    y >>= np.uint((ix % 16) * 2)
     return y & 3
 
 
@@ -61,7 +61,7 @@ def create_phase1_prun_table():
         print("creating " + fname + " table...")
         print('This may take half an hour or even longer, depending on the hardware.')
 
-        flipslice_twist_depth3 = np.full((total // 16 + 1), 0xffffffff, dtype=uint)#ar.array('L', [0xffffffff] * (total // 16 + 1))
+        flipslice_twist_depth3 = np.full(total // 16 + 1, 0xffffffff, dtype=uint)
         # #################### create table with the symmetries of the flipslice classes ###############################
         cc = cb.CubieCube()
         fs_sym = ar.array('H', [0] * defs.N_FLIPSLICE_CLASS)
