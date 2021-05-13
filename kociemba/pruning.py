@@ -32,21 +32,21 @@ def get_flipslice_twist_depth3(ix):
 def get_corners_ud_edges_depth3(ix):
     """corners_ud_edges_depth3(ix) is *at least* the number of moves % 3 to solve phase 2 of a cube with index ix"""
     y = corners_ud_edges_depth3[ix // 16]
-    y >>= (ix % 16) * 2
-    return y & 3
+    y >>= np.uint((ix % 16) * 2)
+    return y & np.uint(3)
 
 
 def set_flipslice_twist_depth3(ix, value):
-    shift = (ix % 16) * 2
-    base = ix >> 4
-    flipslice_twist_depth3[base] &= ~(3 << shift) & 0xffffffff
+    shift = np.uint((ix % 16) * 2)
+    base = ix >> np.uint(4)
+    flipslice_twist_depth3[base] &= ~(np.uint(3) << shift) & 0xffffffff
     flipslice_twist_depth3[base] |= value << shift
 
 
 def set_corners_ud_edges_depth3(ix, value):
-    shift = (ix % 16) * 2
-    base = ix >> 4
-    corners_ud_edges_depth3[base] &= ~(3 << shift) & 0xffffffff
+    shift = np.uint((ix % 16) * 2)
+    base = ix >> np.uint(4)
+    corners_ud_edges_depth3[base] &= ~(np.uint(3) << shift) & 0xffffffff
     corners_ud_edges_depth3[base] |= value << shift
 
 ########################################################################################################################
