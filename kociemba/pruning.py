@@ -25,28 +25,28 @@ relative_path = path.join(path.dirname(__file__), "tables/")
 def get_flipslice_twist_depth3(ix):
     """get_fst_depth3(ix) is *exactly* the number of moves % 3 to solve phase 1 of a cube with index ix"""
     y = flipslice_twist_depth3[ix // 16]
-    y >>= np.uint((ix % 16) * 2)
-    return y & np.uint(3)
+    y >>= (ix % 16) * 2
+    return y & 3
 
 
 def get_corners_ud_edges_depth3(ix):
     """corners_ud_edges_depth3(ix) is *at least* the number of moves % 3 to solve phase 2 of a cube with index ix"""
     y = corners_ud_edges_depth3[ix // 16]
-    y >>= np.uint((ix % 16) * 2)
-    return y & np.uint(3)
+    y >>= (ix % 16) * 2
+    return y & 3
 
 
 def set_flipslice_twist_depth3(ix, value):
-    shift = np.uint((ix % 16) * 2)
-    base = ix >> np.uint(4)
-    flipslice_twist_depth3[base] &= ~(np.uint(3) << shift) & 0xffffffff
+    shift = (ix % 16) * 2
+    base = ix >> 4
+    flipslice_twist_depth3[base] &= ~(3 << shift) & 0xffffffff
     flipslice_twist_depth3[base] |= value << shift
 
 
 def set_corners_ud_edges_depth3(ix, value):
-    shift = np.uint((ix % 16) * 2)
-    base = ix >> np.uint(4)
-    corners_ud_edges_depth3[base] &= ~(np.uint(3) << shift) & 0xffffffff
+    shift = (ix % 16) * 2
+    base = ix >> 4
+    corners_ud_edges_depth3[base] &= ~(3 << shift) & 0xffffffff
     corners_ud_edges_depth3[base] |= value << shift
 
 ########################################################################################################################
@@ -61,7 +61,7 @@ def create_phase1_prun_table():
         print("creating " + fname + " table...")
         print('This may take half an hour or even longer, depending on the hardware.')
 
-        flipslice_twist_depth3 = np.full(total // 16 + 1, 0xffffffff, dtype=uint)
+        flipslice_twist_depth3 = ar.array('L', [0xffffffff] * (total // 16 + 1))#np.full(total // 16 + 1, 0xffffffff, dtype=uint)
         # #################### create table with the symmetries of the flipslice classes ###############################
         cc = cb.CubieCube()
         fs_sym = ar.array('H', [0] * defs.N_FLIPSLICE_CLASS)
@@ -170,7 +170,7 @@ def create_phase1_prun_table():
     else:
         # print("loading " + fname + " table...")
         with open(fname, "rb") as fh:
-            flipslice_twist_depth3 = np.asarray(np.load(fh, allow_pickle=False), dtype=uint)
+            flipslice_twist_depth3 = ar.array('L', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=uint)
 
 
 def create_phase2_prun_table():
@@ -270,7 +270,7 @@ def create_phase2_prun_table():
     else:
         # print("loading " + fname + " table...")
         with open(fname, "rb") as fh:
-            corners_ud_edges_depth3 = np.load(fh, allow_pickle=False)
+            corners_ud_edges_depth3 = ar.array('L', np.load(fh, allow_pickle=False))
 
 
 def create_phase2_cornsliceprun_table():
@@ -309,7 +309,7 @@ def create_phase2_cornsliceprun_table():
     else:
         # print("loading " + fname + " table...")
         with open(fname, "rb") as fh:
-            cornslice_depth = np.load(fh, allow_pickle=False)
+            cornslice_depth = ar.array('b', np.load(fh, allow_pickle=False))
 
 # array distance computes the new distance from the old_distance i and the new_distance_mod3 j. ########################
 # We need this array because the pruning tables only store the distances mod 3. ########################################

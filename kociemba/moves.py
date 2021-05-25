@@ -33,7 +33,7 @@ else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
         # twist_move = np.asarray(ar.array("H"))
-        twist_move = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        twist_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
 ########################################################################################################################
 
 # ####################################  Move table for the flip of the edges. ##########################################
@@ -56,7 +56,7 @@ if not path.isfile(fname):
 else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
-        flip_move = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        flip_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
 ########################################################################################################################
 
 # ###################### Move table for the four UD-slice edges FR, FL, Bl and BR. #####################################
@@ -85,7 +85,7 @@ else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
         # slice_sorted_move = np.asarray(ar.array("H"))
-        slice_sorted_move = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        slice_sorted_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
 ########################################################################################################################
 
 # ################# Move table for the u_edges coordinate for transition phase 1 -> phase 2 ############################
@@ -113,7 +113,7 @@ else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
         # u_edges_move = np.asarray(ar.array("H"))
-        u_edges_move = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        u_edges_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
 ########################################################################################################################
 
 # ################# Move table for the d_edges coordinate for transition phase 1 -> phase 2 ############################
@@ -141,7 +141,7 @@ else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
         # d_edges_move = np.asarray(ar.array("H"))
-        d_edges_move = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        d_edges_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
 ########################################################################################################################
 
 # ######################### # Move table for the edges in the U-face and D-face. #######################################
@@ -173,7 +173,7 @@ else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
         # ud_edges_move = np.asarray(ar.array("H"))
-        ud_edges_move = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        ud_edges_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
 ########################################################################################################################
 
 # ############################ Move table for the corners coordinate in phase 2 ########################################
@@ -202,5 +202,5 @@ else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
         # corners_move = np.asarray(ar.array("H"))
-        corners_move = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        corners_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
 ########################################################################################################################

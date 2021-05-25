@@ -160,7 +160,7 @@ def create_phase2_edgemerge_table():
     if not path.isfile(fname):
         cnt = 0
         print("creating " + fname + " table...")
-        u_edges_plus_d_edges_to_ud_edges = np.array([0 for i in range(N_U_EDGES_PHASE2 * N_PERM_4)], dtype=ushort)
+        u_edges_plus_d_edges_to_ud_edges = ar.array('H', [0 for i in range(N_U_EDGES_PHASE2 * N_PERM_4)])#np.array([0 for i in range(N_U_EDGES_PHASE2 * N_PERM_4)], dtype=ushort)
         for i in range(N_U_EDGES_PHASE2):
             c_u.set_u_edges(i)
             for j in range(N_CHOOSE_8_4):
@@ -193,7 +193,7 @@ def create_phase2_edgemerge_table():
         print()
     else:
         with open(fname, "rb") as fh:
-            u_edges_plus_d_edges_to_ud_edges = np.load(fh, allow_pickle=False)
+            u_edges_plus_d_edges_to_ud_edges = ar.array('H', np.load(fh, allow_pickle=False))
 
 
 ########################################################################################################################

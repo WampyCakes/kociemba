@@ -122,7 +122,7 @@ else:
     # print("loading " + fname + " table...")
     with open(fname, 'rb') as fh:
         # twist_conj = np.asarray(ar.array("H"))
-        twist_conj = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        twist_conj = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
 
 # ######################################################################################################################
 
@@ -150,7 +150,7 @@ else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
         # ud_edges_conj = np.asarray(ar.array("H"))
-        ud_edges_conj = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        ud_edges_conj = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
 # ######################################################################################################################
 
 # ############## Generate the tables to handle the symmetry reduced flip-slice coordinate in  phase 1 ##################
@@ -204,13 +204,13 @@ else:
 
     with open(fname1, 'rb') as fh:
         # flipslice_classidx = np.asarray(ar.array("H"))
-        flipslice_classidx = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        flipslice_classidx = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
     with open(fname2, 'rb') as fh:
         # flipslice_sym = np.asarray(ar.array("B"))
-        flipslice_sym = np.asarray(np.load(fh, allow_pickle=False), dtype=ubyte)
+        flipslice_sym = ar.array('B', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ubyte)
     with open(fname3, 'rb') as fh:
         # flipslice_rep = np.asarray(ar.array("L"))
-        flipslice_rep = np.asarray(np.load(fh, allow_pickle=False), dtype=uint)
+        flipslice_rep = ar.array('L', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=uint)
 ########################################################################################################################
 
 # ############ Generate the tables to handle the symmetry reduced corner permutation coordinate in phase 2 #############
@@ -259,11 +259,11 @@ else:
 
     with open(fname1, 'rb') as fh:
         # corner_classidx = np.asarray(ar.array("H"))
-        corner_classidx = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        corner_classidx = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
     with open(fname2, 'rb') as fh:
         # corner_sym = np.asarray(ar.array("B"))
-        corner_sym = np.asarray(np.load(fh, allow_pickle=False), dtype=ubyte)
+        corner_sym = ar.array('B', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ubyte)
     with open(fname3, 'rb') as fh:
         # corner_rep = np.asarray(ar.array("H"))
-        corner_rep = np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        corner_rep = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
 ########################################################################################################################
