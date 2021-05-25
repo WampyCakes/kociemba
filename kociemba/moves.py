@@ -3,7 +3,6 @@
 from os import path
 import array as ar
 import numpy as np
-from numpy import uint, ushort, ubyte
 from . import cubie as cb
 from . import enums
 from .defs import N_TWIST, N_FLIP, N_SLICE_SORTED, N_CORNERS, N_UD_EDGES, N_MOVE
@@ -32,8 +31,7 @@ if not path.isfile(fname):
 else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
-        # twist_move = np.asarray(ar.array("H"))
-        twist_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        twist_move = ar.array('H', np.load(fh, allow_pickle=False))
 ########################################################################################################################
 
 # ####################################  Move table for the flip of the edges. ##########################################
@@ -56,7 +54,7 @@ if not path.isfile(fname):
 else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
-        flip_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        flip_move = ar.array('H', np.load(fh, allow_pickle=False))
 ########################################################################################################################
 
 # ###################### Move table for the four UD-slice edges FR, FL, Bl and BR. #####################################
@@ -84,8 +82,7 @@ if not path.isfile(fname):
 else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
-        # slice_sorted_move = np.asarray(ar.array("H"))
-        slice_sorted_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        slice_sorted_move = ar.array('H', np.load(fh, allow_pickle=False))
 ########################################################################################################################
 
 # ################# Move table for the u_edges coordinate for transition phase 1 -> phase 2 ############################
@@ -112,8 +109,7 @@ if not path.isfile(fname):
 else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
-        # u_edges_move = np.asarray(ar.array("H"))
-        u_edges_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        u_edges_move = ar.array('H', np.load(fh, allow_pickle=False))
 ########################################################################################################################
 
 # ################# Move table for the d_edges coordinate for transition phase 1 -> phase 2 ############################
@@ -140,8 +136,7 @@ if not path.isfile(fname):
 else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
-        # d_edges_move = np.asarray(ar.array("H"))
-        d_edges_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        d_edges_move = ar.array('H', np.load(fh, allow_pickle=False))
 ########################################################################################################################
 
 # ######################### # Move table for the edges in the U-face and D-face. #######################################
@@ -172,8 +167,7 @@ if not path.isfile(fname):
 else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
-        # ud_edges_move = np.asarray(ar.array("H"))
-        ud_edges_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        ud_edges_move = ar.array('H', np.load(fh, allow_pickle=False))
 ########################################################################################################################
 
 # ############################ Move table for the corners coordinate in phase 2 ########################################
@@ -201,6 +195,5 @@ if not path.isfile(fname):
 else:
     # print("loading " + fname + " table...")
     with open(fname, "rb") as fh:
-        # corners_move = np.asarray(ar.array("H"))
-        corners_move = ar.array('H', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=ushort)
+        corners_move = ar.array('H', np.load(fh, allow_pickle=False))
 ########################################################################################################################

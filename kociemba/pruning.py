@@ -10,7 +10,6 @@ from os import path
 import time
 import array as ar
 import numpy as np
-from numpy import uint
 
 flipslice_twist_depth3 = None  # global variables, initialized during pruning table cration
 corners_ud_edges_depth3 = None
@@ -61,7 +60,7 @@ def create_phase1_prun_table():
         print("creating " + fname + " table...")
         print('This may take half an hour or even longer, depending on the hardware.')
 
-        flipslice_twist_depth3 = ar.array('L', [0xffffffff] * (total // 16 + 1))#np.full(total // 16 + 1, 0xffffffff, dtype=uint)
+        flipslice_twist_depth3 = ar.array('L', [0xffffffff] * (total // 16 + 1))
         # #################### create table with the symmetries of the flipslice classes ###############################
         cc = cb.CubieCube()
         fs_sym = ar.array('H', [0] * defs.N_FLIPSLICE_CLASS)
@@ -170,7 +169,7 @@ def create_phase1_prun_table():
     else:
         # print("loading " + fname + " table...")
         with open(fname, "rb") as fh:
-            flipslice_twist_depth3 = ar.array('L', np.load(fh, allow_pickle=False))#np.asarray(np.load(fh, allow_pickle=False), dtype=uint)
+            flipslice_twist_depth3 = ar.array('L', np.load(fh, allow_pickle=False))
 
 
 def create_phase2_prun_table():
