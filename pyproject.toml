@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "kociemba"
-version = "0.1.0"
+name = "kociemba-manim-rubikscube"
+version = "0.0.1"
 description = ""
 authors = ["Name <fake-noreply@email.com>"]
 license = "GPLv3"
