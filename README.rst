@@ -1,0 +1,1 @@
+This had to be uploaded to PyPI because manim-rubikscube depends on this package and PyPI won't allow a direct dependency to GitHub.

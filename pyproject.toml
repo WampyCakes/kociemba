@@ -1,9 +1,14 @@
 [tool.poetry]
 name = "kociemba-manim-rubikscube"
-version = "0.0.1"
-description = "This had to be uploaded to PyPI because manim-rubikscube depends on this package and PyPI won't allow a direct dependency to GitHub."
+version = "0.0.0.1"
+description = ""
+readme = "README.rst"
 authors = ["Name <fake-noreply@email.com>"]
+repository = "https://github.com/WampyCakes/kociemba"
 license = "GPLv3"
+packages = [
+    { include = "kociemba" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
