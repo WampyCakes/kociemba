@@ -13,4 +13,5 @@ As per the license, changes made to Kociemba's source are:
 * Removed anything unnecessary for solving such as examples, GUI, vision, and server files
 * Commented out print statements
 * Changed import statements
-* Changed the way tables are written, read, and manipulated to be OS-independent (avoiding `EOFError: read() didn't return enough bytes`)
+* Changed the way tables are written and read to be OS-independent (avoiding `EOFError: read() didn't return enough bytes` and other less important errors)
+* Put a shell around it to act as a legitimate, installable Python package
