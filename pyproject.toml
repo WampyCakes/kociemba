@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "kociemba-manim-rubikscube"
 version = "0.0.1"
-description = ""
+description = "This had to be uploaded to PyPI because manim-rubikscube depends on this package and PyPI won't allow a direct dependency to GitHub."
 authors = ["Name <fake-noreply@email.com>"]
 license = "GPLv3"
 
